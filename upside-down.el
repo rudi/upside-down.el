@@ -23,9 +23,9 @@
 ;; Turns text upside down, using unicode symbols similar to
 ;; upside-down (European) letters.
 
-;; Mapping table courtesy of
-;; http://www.fileformat.info/convert/text/upside-down.htm, which
-;; credits http://www.revfad.com/flip.html.
+;; Mapping table adapted from & courtesy of
+;; http://www.fileformat.info/convert/text/upside-down.htm, which in
+;; turn credits http://www.revfad.com/flip.html.
 
 ;;; Todo:
 
@@ -65,7 +65,6 @@
     (?K . ?⋊)
     (?L . ?⅂)
     (?M . ?W)
-    (?N . ?ᴎ)
     (?P . ?Ԁ)
     (?Q . ?Ό)
     (?R . ?ᴚ)
