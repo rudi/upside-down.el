@@ -123,10 +123,10 @@
 (defun upside-down-region (start end)
   "Turns text in region upside down."
   (interactive "r")
-  (save-excursion
+  (atomic-change-group 
     (translate-region start end upside-down-chartable)
-    (insert (upside-down-reverse-lines-in-string
-	     (delete-and-extract-region start end)))))
+    (insert-and-inherit (upside-down-reverse-lines-in-string
+                         (delete-and-extract-region start end)))))
 
 (provide 'upside-down)
 ;;; upside-down.el ends here
