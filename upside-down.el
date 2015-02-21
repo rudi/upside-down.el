@@ -38,7 +38,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 
 (defvar upside-down-translation-alist
   '((?! . ?¡)
@@ -109,21 +109,21 @@
   "Upside-down character translation table.")
 
 (defun upside-down-reverse-lines-in-string (string)
-  (loop
+  (cl-loop
    with string = (copy-seq string)
    for start = 0 then (if end (1+ end) nil)
-   for end = (position ?\n string :start start)
+   for end = (cl-position ?\n string :start start)
    while start
    do (setf string
-	    (replace string
-		     (nreverse (string-to-list (subseq string start end)))
+	    (cl-replace string
+		     (nreverse (string-to-list (cl-subseq string start end)))
 		     :start1 start :end1 end))
    finally (return string)))
 
 (defun upside-down-region (start end)
   "Turns text in region upside down."
   (interactive "r")
-  (atomic-change-group 
+  (atomic-change-group
     (translate-region start end upside-down-chartable)
     (insert-and-inherit (upside-down-reverse-lines-in-string
                          (delete-and-extract-region start end)))))
