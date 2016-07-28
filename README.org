@@ -1,0 +1,7 @@
+* Upside down characters for Emacs
+
+Type =M-x upside-down-region= to uɹnʇ ɹnoʎ pʃɹoʍ punoɹɐ.
+
+Mapping table adapted from & courtesy of
+http://www.fileformat.info/convert/text/upside-down.htm, which in turn credits
+http://www.revfad.com/flip.html.
